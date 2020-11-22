@@ -178,6 +178,8 @@ export function pragma<T extends keyof pragma.JSX.IntrinsicElements> (
   properties?: pragma.JSX.Properties<T>,
   ...children: pragma.JSX.ElementChildrenAttribute['children'][]
 ): string {
+  console.log({ dlcmh: 'dlcmh wuz here', children: JSON.stringify(children) });
+
   return (
     tagName in EMPTY_ELEMENT_LIST
       ? `<${tagName}${properties ? ` ${renderAttributes(properties)}` : ''}>`
